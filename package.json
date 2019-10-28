@@ -1,0 +1,21 @@
+{
+  "name": "nestjs-profiler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@nestjs/common": "^6.8.5",
+    "@nestjs/core": "^6.8.5",
+    "@nestjs/testing": "^6.8.5",
+    "@types/jest": "^24.0.20",
+    "@types/node": "^12.11.7",
+    "@types/nunjucks": "^3.1.2",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.0"
+  }
+}
