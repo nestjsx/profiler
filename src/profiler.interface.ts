@@ -4,7 +4,7 @@ export interface ProfilerInterface {
   request: {
     body: any,
     headers: {[s: string]: string},
-    method: 'GET' | 'POST' | 'OPTIONS' | 'PATCH' | 'DELETE';
+    method: 'GET' | 'POST' | 'OPTIONS' | 'PATCH' | 'DELETE' | 'PUT';
     uri: string;
   };
   response: {
