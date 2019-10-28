@@ -6,7 +6,7 @@ import { ProfilerService } from './profiler.service';
 @Controller()
 export class ProfilerController {
   constructor(private readonly service: ProfilerService) {
-    nunjucks.configure(path.resolve(__dirname, 'views'), { autoescape: true });
+    nunjucks.configure(path.resolve(__dirname, '..', 'views'), { autoescape: true });
   }
   @Get()
   async profiler(@Query('page') page: number = 1): Promise<string> {

@@ -28,8 +28,18 @@ export class ProfilerInterceptor implements NestInterceptor {
     return next.handle().pipe(
       tap(async () => {
         await this.service.store({
-          request,
-          response,
+          request: {
+            headers: request.headers,
+            body: request.body,
+            method: request.method,
+            uri: request.url,
+          },
+          response: {
+            status: response.statusCode(),
+            statusText: '',
+            json: response.body,
+            headers: response.headers,
+          },
           executionContext,
           elipsedTime: start - Date.now(),
         });

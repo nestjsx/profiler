@@ -1,9 +1,18 @@
-import { Request, Response } from 'express';
 import { Type } from '@nestjs/common';
 
 export interface ProfilerInterface {
-  request: Request;
-  response: Response;
+  request: {
+    body: any,
+    headers: {[s: string]: string},
+    method: 'GET' | 'POST' | 'OPTIONS' | 'PATCH' | 'DELETE';
+    uri: string;
+  };
+  response: {
+    status: number;
+    statusText: string;
+    json: object;
+    headers: {[s: string]: string};
+  };
   executionContext: {
     class: Type<any>;
     handler: Function;

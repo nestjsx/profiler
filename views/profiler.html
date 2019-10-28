@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Nestjsx/profiler</title>
+  </head>
+  <body>
+    <div class="section">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <div class="menu">
+              <ul>
+                {% for entry in entires %}
+                  <li>
+                    <a href="">
+                      <span class="tag {{ (entry.response.status >= 200 && entry.response.status) < 300 
+                        ? 'is-success' 
+                        : (entry.response.status >= 300 && entry.response.status < 400) 
+                        ? 'is-info' 
+                        : (entry.response.status >= 400 && entry.response.status < 500) 
+                        ? 'is-warning' 
+                        : (entry.response.status >= 500) 
+                        ? 'is-danger' 
+                        : '' }}">
+                          {{entry.response.status}}
+                      </span>
+                      <span class="">{{ entry.request.method }}</span>
+                      <span class="">{{ entry.request.uri }} </span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <!-- show selected entry -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
